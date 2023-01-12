@@ -17,4 +17,5 @@ dependencies:
   bip39_mnemonic: ^3.0.5
   convert: ^3.1.1
   dart_bip32_bip44: ^0.2.0
+  http: ^0.13.5
   web3dart: ^2.5.3
