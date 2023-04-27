@@ -21,5 +21,8 @@ class Wallet {
   Future<void> checkCurrentNetwork() async {
     final chainId = await client.getChainId();
     print('Chain ID: $chainId');
+    final gasFeeAmount = await client.getGasPrice();
+    final gasInGwei = gasFeeAmount.getValueInUnit(EtherUnit.gwei);
+    print('Gas Fee: $gasInGwei gwei');
   }
 }

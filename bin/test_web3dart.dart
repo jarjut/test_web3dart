@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:http/http.dart';
 import 'package:test_web3dart/test_web3dart.dart';
 
@@ -20,11 +22,18 @@ void main(List<String> arguments) async {
   final wallet = Wallet(
     credentials: credentials,
     httpClient: Client(),
-    url: 'https://rpc.sepolia.org',
+    url: Network.maticMumbaiTestNet,
   );
 
   await wallet.checkCurrentNetwork();
 
   final balance = await wallet.getBalance();
   print('Balance: $balance');
+
+  exit(0);
+}
+
+class Network {
+  static const String ethSepoliaTestNet = 'https://rpc.sepolia.org';
+  static const String maticMumbaiTestNet = 'https://rpc-mumbai.maticvigil.com/';
 }
